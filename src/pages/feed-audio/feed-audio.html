@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+    <ion-content class="card-background-page">
+    
+    <ion-searchbar [(ngModel)]="searchTerm" [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
+ 
+    <div *ngIf="searching" class="spinner-container">
+        <ion-spinner></ion-spinner>
+    </div>
+    
+    
+<ion-content class="cards-bg">
+    
+    <ion-card *ngFor="let item of items" class="card-background-page">
+        
+        <img src="assets/img/nin-live.png"/>
+
+        <ion-card-content>
+          <ion-card-title>
+            {{item.title}} <!-- Nine Inch Nails Live -->
+          </ion-card-title>
+          <p>
+            The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+
+        <ion-row no-padding>
+          <ion-col>
+            <button ion-button clear small color="danger" icon-left>
+              <ion-icon name='star'></ion-icon>
+              Favorite
+            </button>
+          </ion-col>
+          <ion-col text-center>
+            <button ion-button clear small color="danger" icon-left (click)="play()">
+              <ion-icon name='musical-notes'></ion-icon>
+              Listen
+            </button>
+          </ion-col>
+          <ion-col text-right>
+            <button ion-button clear small color="danger" icon-left>
+              <ion-icon name='share-alt'></ion-icon>
+              Share
+            </button>
+          </ion-col>
+        </ion-row>
+
+    </ion-card>
+    
+    
+  <!--
+    <ion-list>
+        <ion-item *ngFor="let item of items">
+            
+<img src="http://placehold.it/300x200"/>
+    <div class="card-title">{{item.title}}</div>
+    <div class="card-subtitle">28 Listings</div>
+  <button dark (click)="play()"> <ion-icon name="play"></ion-icon></button>
+  <button dark (click)="pause()"> <ion-icon name="pause"></ion-icon></button>
+        </ion-item>
+    </ion-list>
+-->
+
+</ion-content>
